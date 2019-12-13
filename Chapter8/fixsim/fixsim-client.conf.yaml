@@ -1,0 +1,20 @@
+---
+#interval in seconds for market data resubscribe
+subscribe_interval: 10
+
+#only 44 version supported
+fix_version: FIX44
+
+logging:
+    target: file
+    filename: fixsim-client.log
+#or logging:
+#   target: syslog
+
+#trade chance for each snapshot in percents
+skip_snapshot_chance: 0
+
+instruments:
+    - symbol: USD/RUB
+    - symbol: EUR/USD
+...
