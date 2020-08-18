@@ -65,7 +65,7 @@ def plot_chart(cum_symbol_return, cum_strategy_return, symbol):
     plt.legend()
     plt.show()
 
-plot_shart(cum_goog_return, cum_strategy_return,symbol='GOOG')
+plot_chart(cum_goog_return, cum_strategy_return,symbol='GOOG')
 
 
 
