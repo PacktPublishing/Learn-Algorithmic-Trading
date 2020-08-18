@@ -58,7 +58,7 @@ cum_goog_return=calculate_return(goog_data,split_value=len(X_train),symbol='GOOG
 cum_strategy_return= calculate_strategy_return(goog_data,split_value=len(X_train))
 
 
-def plot_shart(cum_symbol_return, cum_strategy_return, symbol):
+def plot_chart(cum_symbol_return, cum_strategy_return, symbol):
     plt.figure(figsize=(10,5))
     plt.plot(cum_symbol_return, label='%s Returns' % symbol)
     plt.plot(cum_strategy_return,label='Strategy Returns')
