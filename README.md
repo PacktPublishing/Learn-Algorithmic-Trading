@@ -44,6 +44,11 @@ With the following software and hardware list you can run all code files present
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781789348347_ColorImages.pdf).
 
+## Errata
+
+* Page 144 (Bullet pont 4, line 9 of code): **MIN_PROFIT_TO_CLOSE = 10** _should be_ **MIN_PROFIT_TO_CLOSE = 10*NUM_SHARES_PER_TRADE**
+
+
 ### Related products
 * Mastering Python for Finance - Second Edition  [[Packt]](https://www.packtpub.com/in/big-data-and-business-intelligence/mastering-python-finance-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789346466) [[Amazon]](https://www.amazon.com/dp/1789346460)
 

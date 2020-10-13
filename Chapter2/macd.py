@@ -63,7 +63,7 @@ for close_price in close:
   if ema_macd == 0:
     ema_macd = macd
   else:
-    ema_macd = (macd - ema_macd) * K_slow + ema_macd # signal is EMA of MACD values
+    ema_macd = (macd - ema_macd) * K_macd + ema_macd # signal is EMA of MACD values
 
   macd_values.append(macd)
   macd_signal_values.append(ema_macd)
