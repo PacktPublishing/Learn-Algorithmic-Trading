@@ -42,8 +42,8 @@ open_pnl = 0 # Open/Unrealized PnL marked to market
 closed_pnl = 0 # Closed/Realized PnL so far
 
 # Constants that define strategy behavior/thresholds
-APO_VALUE_FOR_BUY_ENTRY = 10 # APO trading signal value above which to enter buy-orders/long-position
-APO_VALUE_FOR_SELL_ENTRY = -10 # APO trading signal value below which to enter sell-orders/short-position
+APO_VALUE_FOR_BUY_ENTRY = -10 # APO trading signal value above which to enter buy-orders/long-position
+APO_VALUE_FOR_SELL_ENTRY = 10 # APO trading signal value below which to enter sell-orders/short-position
 MIN_PRICE_MOVE_FROM_LAST_TRADE = 10 # Minimum price change since last trade before considering trading again, this is to prevent over-trading at/around same prices
 NUM_SHARES_PER_TRADE = 10 # Number of shares to buy/sell on every trade
 MIN_PROFIT_TO_CLOSE = 10*NUM_SHARES_PER_TRADE # Minimum Open/Unrealized profit at which to close positions and lock profits
@@ -69,7 +69,7 @@ for close_price in close:
   # We will perform a sell trade at close_price if the following conditions are met:
   # 1. The APO trading signal value is below Sell-Entry threshold and the difference between last trade-price and current-price is different enough.
   # 2. We are long( +ve position ) and either APO trading signal value is at or below 0 or current position is profitable enough to lock profit.
-  if ((apo < APO_VALUE_FOR_SELL_ENTRY and abs(close_price - last_sell_price) > MIN_PRICE_MOVE_FROM_LAST_TRADE) # APO above sell entry threshold, we should sell
+  if ((apo > APO_VALUE_FOR_SELL_ENTRY and abs(close_price - last_sell_price) > MIN_PRICE_MOVE_FROM_LAST_TRADE) # APO above sell entry threshold, we should sell
     or
     (position > 0 and (apo <= 0 or open_pnl > MIN_PROFIT_TO_CLOSE))): # long from +ve APO and APO has gone negative or position is profitable, sell to close position
     orders.append(-1) # mark the sell trade
