@@ -23,7 +23,7 @@ goog_montly_return_list=[]
 for i in range(len(goog_monthly_return)):
     goog_montly_return_list.append\
         ({'month':goog_monthly_return.index[i][1],
-          'monthly_return': goog_monthly_return[i]})
+          'monthly_return': goog_monthly_return.index[i][0]})
 
 goog_montly_return_list=pd.DataFrame(goog_montly_return_list,
                                      columns=('month','monthly_return'))
