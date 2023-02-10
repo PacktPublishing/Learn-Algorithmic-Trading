@@ -59,7 +59,7 @@ def plot_rolling_statistics_ts(ts, titletext,ytext, window_size=12):
     plt.legend(loc='best')
     plt.ylabel(ytext)
     plt.title(titletext)
-    plt.show(block=False)
+    plt.show()
 
 
 plot_rolling_statistics_ts(goog_monthly_return[1:],'GOOG prices rolling mean and standard deviation','Monthly return')
