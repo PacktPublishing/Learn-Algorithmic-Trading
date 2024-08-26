@@ -1,8 +1,9 @@
 from pandas_datareader import data
+import yfinance as yf
 start_date = '2014-01-01'
 end_date = '2018-01-01'
-goog_data = data.DataReader('GOOG', 'yahoo', start_date, end_date)
-
+# goog_data = data.DataReader('GOOG', 'yahoo', start_date, end_date)
+goog_data = yf.download('GOOG', start_date, end_date)
 
 import numpy as np
 import pandas as pd
@@ -28,7 +29,7 @@ ax1.plot(goog_data_signal.loc[goog_data_signal.positions == -1.0].index,
          goog_data_signal.price[goog_data_signal.positions == -1.0],
          'v', markersize=5, color='k')
 
-#plt.show()
+plt.show()
 
 
 # Set the initial capital
@@ -41,9 +42,14 @@ portfolio = pd.DataFrame(index=goog_data_signal.index).fillna(0.0)
 positions['GOOG'] = goog_data_signal['signal']
 portfolio['positions'] = (positions.multiply(goog_data_signal['price'], axis=0))
 portfolio['cash'] = initial_capital - (positions.diff().multiply(goog_data_signal['price'], axis=0)).cumsum()
+portfolio["cash"] = portfolio["cash"].fillna(0)
 portfolio['total'] = portfolio['positions'] + portfolio['cash']
 portfolio.plot()
+portfolio.head().plot()
 plt.show()
+
+
+portfolio.drop("positions", axis="columns", inplace=True)
 
 
 fig = plt.figure()

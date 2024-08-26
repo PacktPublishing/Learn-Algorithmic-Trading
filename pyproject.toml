@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "learn-algorithmic-trading"
+version = "0.1.0"
+description = ""
+authors = ["bzrq"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2.2"
+numpy = "^2.1.0"
+yfinance = "^0.2.43"
+matplotlib = "^3.9.2"
+h5py = "^3.11.0"
+python-box = "^7.2.0"
+tables = "^3.10.1"
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

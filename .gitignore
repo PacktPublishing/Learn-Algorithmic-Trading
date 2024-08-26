@@ -21,3 +21,5 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+Chapter7/__pycache__
+Chapter9/__pycache__
